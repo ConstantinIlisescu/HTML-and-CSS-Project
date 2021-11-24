@@ -4,3 +4,10 @@ body {
     font-size: large;
     text-align: center;
 }
+
+input {
+width: 10cm;
+margin: 15px 5px;
+border: 1px solid blanchedalmond;
+border-radius: 5px;
+}
