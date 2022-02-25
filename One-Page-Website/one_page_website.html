@@ -1,87 +1,140 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/one_page_website.css">
-  <title>One Page Website</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/one_page_website.css">
+    <script src="js/one_page_website.js"></script>
+    <title>One Page Website</title>
+  </head>
 
-<body>
-
-
-
-  <br>
-  <br>
-
-  <!-- nav bar -->
-  <div id="navBar">
-    <div>
-      <a href="#mainSection">Home</a>
-      <a href="#pictureSection">Pictures</a>
-      <a href="#videoSection">Videos</a>
-      <a href="#contactSection">Contact Us</a>
+  <body>
 
 
-    </div>
-  </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <br>
+    <br>
 
-  <!-- main section -->
-  <div id="mainSection">
-    <h1>Welcome to the funny world of animals!</h1>
-
-    <img src="images/funnyAnimal1.jpg" alt="smiling monkey welcoming you" width="300">
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
-      Ea possimus facere nemo commodi architecto vel obcaecati, <br>
-      fugit est nisi deserunt fuga quae nesciunt soluta illum. <br>
-      Distinctio ab, eveniet modi consequuntur!</p>
-
-  </div>
+    <!-- nav bar -->
+    <div id="navBar">
+      <div>
+        <a href="#mainSection">Home</a>
+        <a href="#pictureSection">Pictures</a>
+        <a href="#videoSection">Videos</a>
+        <a href="#contactSection">Contact Us</a>
 
 
-  <!-- picture section -->
-  <div id="pictureSection">
-
-    <h3>Scroll down to see some more funny animals.</h3>
-
-    <div>
-      <img src="images/funnyAnimal2.jpg" alt="Raccoon wearing funny sunglases" width="300">
+      </div>
     </div>
 
-    <div>
-      <img src="images/funnyAnimal3.jpg" alt="" width="300">
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <div>
-      <img src="images/funnyAnimal4.jpg" alt="squirrel eating corn on the cob" width="300">
-    </div>
+    <!-- main section -->
+    <div id="mainSection">
+      <h1>Welcome to the funny world of animals!</h1>
 
-    <div>
-      <img src="images/funnyAnimal5.jpg" alt="two dogs, one smiling and one being shocked" width="300">
+      <img src="images/funnyAnimal1.jpg" alt="smiling monkey welcoming you" width="300">
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit <br>
+        Ea possimus facere nemo commodi architecto vel obcaecati, <br>
+        fugit est nisi deserunt fuga quae nesciunt soluta illum. <br>
+        Distinctio ab, eveniet modi consequuntur!</p>
+
     </div>
 
 
-  </div>
+    <!-- picture section -->
 
-  <!-- video section-->
-  <div id="videoSection">
-    <p>Let's see some funny animals in action!</p>
-    <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/axaPh5psu38?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Click on image to enlarge it.</h3>
+
+      <!-- Images used to open the lightbox -->
+      <div class="row" id="pictureSection">
+        <div class="column">
+          <img src="images/funnyAnimal2Small.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="images/funnyAnimal3Small.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="images/funnyAnimal4Small.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+        <div class="column">
+          <img src="images/funnyAnimal5Small.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        </div>
+      </div>
+
+      <!-- The Modal/Lightbox -->
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/funnyAnimal2.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/funnyAnimal3.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/funnyAnimal4.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/funnyAnimal5.jpg" style="width:100%">
+          </div>
+
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <!-- Thumbnail image controls -->
+          <div class="column">
+            <img class="demo" src="images/funnyAnimal2Small.jpg" onclick="currentSlide(1)" alt="">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/funnyAnimal3Small.jpg" onclick="currentSlide(2)" alt="">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/funnyAnimal4Small.jpg" onclick="currentSlide(3)" alt="">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/funnyAnimal5Small.jpg" onclick="currentSlide(4)" alt="">
+          </div>
+        </div>
+      </div>
+
+    <!-- video section-->
+    <div id="videoSection">
+      <p>Let's see some funny animals in action!</p>
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/axaPh5psu38?autoplay=1&mute=1"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
 
 
-  <!-- contact us section -->
+    <!-- contact us section -->
     <div id="contactSection">
       <h2>Want to see more? Submit a form!</h2>
 
@@ -96,15 +149,15 @@
       </form>
 
     </div>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
 
-<footer>
-  Created by Constantin Ilisescu &#169;CopyRight
-</footer>
+    <footer>
+      Created by Constantin Ilisescu &#169;CopyRight
+    </footer>
 
-</body>
+  </body>
 
 
 </html>
